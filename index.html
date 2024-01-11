@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <menu>
+                <li><a href="#">Library</a></li>
+            </menu>
+        </nav>
+    </header>
+    <section class="form">
+        <form id="bookForm">
+            <label for="Title">Title:</label>
+            <input type="text" id="Title" name="Title" required>
+
+            <label for="Author">Author:</label>
+            <input type="text" id="Author" name="Author" required>
+
+            <label for="Year">Year:</label>
+            <input type="text" id="Year" name="Year" required>
+
+            <label for="Genre">Genre:</label>
+            <input type="text" id="Genre" name="Genre" required>
+
+            <button type="button" id="addBook">Add Book</button>
+        </form>
+    </section>
+    <section class="filters">
+        <label for="titleFilter">Title:</label>
+        <select id="titleFilter"></select>
+    
+        <label for="authorFilter">Author:</label>
+        <select id="authorFilter"></select>
+    
+        <label for="yearFilter">Year:</label>
+        <select id="yearFilter"></select>
+    
+        <label for="genreFilter">Genre:</label>
+        <select id="genreFilter"></select>
+    </section>    
+    <section class="list">
+        <div id="bookList"></div>
+    </section>
+</body>
+</html>
