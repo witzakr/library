@@ -35,12 +35,30 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem('books', JSON.stringify(storedBooks));
             renderList();
 
-            // Clear form fields
             document.getElementById('Title').value = "";
             document.getElementById('Author').value = "";
             document.getElementById('Year').value = "";
             document.getElementById('Genre').value = "";
         }
+    });
+
+    document.getElementById('Clearlist').addEventListener('click', function () {
+        localStorage.removeItem('books');
+        storedBooks.length = 0;
+        renderList();
+    });
+
+    document.getElementById('LoadAPI').addEventListener('click', function () {
+        fetch('https://mocki.io/v1/f439f7ac-e0ec-4a90-9f92-72089e23060c')
+            .then(response => response.json())
+            .then(data => {
+                storedBooks.push(...data);
+                localStorage.setItem('books', JSON.stringify(storedBooks));
+                renderList();
+            })
+            .catch(error => {
+                console.error('Error fetching data from the API:', error);
+            });
     });
 
     window.removeBook = function (index) {
