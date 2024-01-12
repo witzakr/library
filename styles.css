@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
@@ -81,3 +82,10 @@ form {
     display: flex;
     margin-top: 30px;
   }
+
+  .filters {
+    width: 50%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the filter horizontally */
+    text-align: center; /* Center the contents within the filter */
+    margin-top: 30px;
+}
