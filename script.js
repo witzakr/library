@@ -4,15 +4,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function renderList() {
         bookList.innerHTML = "";
+        const ul = document.createElement('ul');
+
         storedBooks.forEach((book, index) => {
-            const bookItem = document.createElement('div');
-            bookItem.innerHTML = `
-                <span>${book.title} by ${book.author} (${book.year}) - ${book.genre}</span>
+            const li = document.createElement('li');
+            const detailsDiv = document.createElement('div');
+            detailsDiv.style.display = 'none'; 
+
+            const toggleButton = document.createElement('button');
+            toggleButton.textContent = 'Details';
+            toggleButton.onclick = function () {
+                if (detailsDiv.style.display === 'none') {
+                    detailsDiv.style.display = 'block';
+                } else {
+                    detailsDiv.style.display = 'none';
+                }
+            };
+
+            li.innerHTML = `
+                <span>${book.title}</span>
                 <button onclick="editBook(${index})">Edit</button>
                 <button onclick="removeBook(${index})">Remove</button>
             `;
-            bookList.appendChild(bookItem);
+
+            detailsDiv.innerHTML = `
+                <span>Author: ${book.author}, Year: ${book.year}, Genre: ${book.genre}</span>
+            `;
+
+            li.appendChild(toggleButton);
+            li.appendChild(detailsDiv);
+            ul.appendChild(li);
         });
+
+        bookList.appendChild(ul);
     }
 
     renderList();

@@ -70,6 +70,7 @@ form {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-bottom: 5px;
   }
 
   button:hover {
@@ -88,4 +89,8 @@ form {
     margin: 0 auto; /* Center the filter horizontally */
     text-align: center; /* Center the contents within the filter */
     margin-top: 30px;
-}
+  }
+
+  div {
+    margin-bottom: 5px;
+  }
